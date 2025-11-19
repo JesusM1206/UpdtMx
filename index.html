@@ -1,41 +1,118 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Tienda</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Updt Mx</title>
     <style>
-        body { 
-            font-family: Arial; 
-            padding: 20px; 
-            background: #f3f3f3;
-        }
-        .producto {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-        }
-        .btn {
-            background: #28a745;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 8px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Bienvenido a mi tienda</h1>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: #0a0a0f;
+            color: #e5e7eb;
+        }header {
+        background: #1a1a2e;
+        color: #8ab4ff;
+        padding: 25px 20px;
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-shadow: 0 0 10px #3b82f6;
+    }
 
+    .hero {
+        background: radial-gradient(circle at top, #3b0ca3, #1a044d);
+        color: white;
+        padding: 70px 20px;
+        text-align: center;
+        box-shadow: 0 0 25px #5b21b6 inset;
+    }
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 10px;
+        text-shadow: 0 0 15px #8b5cf6;
+    }
+    .hero p {
+        font-size: 18px;
+        opacity: 0.95;
+    }
+
+    .contenedor {
+        max-width: 900px;
+        margin: auto;
+        padding: 25px;
+    }
+
+    .producto {
+        background: #111827;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
+        margin-bottom: 25px;
+        transition: 0.25s ease;
+        border: 1px solid rgba(139, 92, 246, 0.2);
+    }
+    .producto:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 25px rgba(96, 165, 250, 0.45);
+    }
+    .producto h2 {
+        margin: 0 0 12px;
+        font-size: 26px;
+        color: #93c5fd;
+        text-shadow: 0 0 8px #2563eb;
+    }
+    .producto p {
+        margin: 0 0 18px;
+        font-size: 18px;
+        color: #cbd5e1;
+    }
+
+    .btn {
+        display: inline-block;
+        background: #3b82f6;
+        color: white;
+        padding: 14px 22px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 17px;
+        text-shadow: 0 0 10px #1e3a8a;
+        box-shadow: 0 0 12px #3b82f6;
+    }
+    .btn:hover {
+        background: #2563eb;
+        box-shadow: 0 0 20px #60a5fa;
+    }
+
+    footer {
+        text-align: center;
+        padding: 30px;
+        margin-top: 40px;
+        background: #1a1a2e;
+        color: #93c5fd;
+        font-size: 14px;
+        box-shadow: 0 0 20px #3b82f6 inset;
+    }
+</style>
+
+</head>
+<body><header>Updt Mx</header><section class="hero">
+    <h1>Productos de calidad al mejor precio</h1>
+    <p>Compra fácil, rápido y directo por WhatsApp</p>
+</section><div class="contenedor">
     <div class="producto">
         <h2>Producto de ejemplo</h2>
         <p>$199 MXN</p>
-        <a class="btn" href="https://wa.me/5210000000000?text=Hola,%20quiero%20comprar%20este%20producto">
-            Comprar por WhatsApp
-        </a>
-    </div>
+        <a class="btn" href="https://wa.me/5216183818899?text=Hola,%20quiero%20el%20producto%20de%20ejemplo">Comprar por WhatsApp</a>
+    </div><div class="producto">
+    <h2>Producto 2</h2>
+    <p>$299 MXN</p>
+    <a class="btn" href="https://wa.me/5216183818899?text=Hola,%20quiero%20el%20producto%202">Comprar por WhatsApp</a>
+</div>
 
-</body>
+</div><footer>
+    © 2025 Updt Mx — Todos los derechos reservados.
+</footer></body>
 </html>
