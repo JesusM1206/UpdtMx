@@ -1,0 +1,108 @@
+<!DOCTYPE html><html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar sesión - Updt Mx</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #0a0a1a;
+            color: white;
+        }/* Contenedor login */
+    .login-container {
+        max-width: 350px;
+        margin: 70px auto;
+        background: #140028;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 25px #6800ffcc;
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .login-container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        background: linear-gradient(90deg, #4f00ff, #00b7ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .login-container input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 10px;
+        background: #1a1a2e;
+        color: white;
+        font-size: 1rem;
+        box-shadow: 0 0 8px #4f00ff;
+        outline: none;
+    }
+
+    .login-container button {
+        width: 100%;
+        padding: 12px;
+        background: #4f00ff;
+        border: none;
+        border-radius: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        color: white;
+        font-size: 1.1rem;
+        transition: 0.2s;
+    }
+
+    .login-container button:hover {
+        box-shadow: 0 0 12px #7f2bff;
+        transform: scale(1.02);
+    }
+
+    .links {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 0.9rem;
+    }
+    .links a {
+        color: #7f5bff;
+        text-decoration: none;
+    }
+
+    .back {
+        text-align: center;
+        margin-top: 25px;
+    }
+    .back a {
+        color: #00a2ff;
+        text-decoration: none;
+        font-size: 1rem;
+    }
+</style>
+
+</head>
+<body><div class="login-container">
+    <h2>Iniciar sesión</h2>
+
+    <input type="email" placeholder="Correo electrónico" />
+    <input type="password" placeholder="Contraseña" />
+
+    <button onclick="alert('Inicio de sesión simulado — aún no conectado a base de datos')">Entrar</button>
+
+    <div class="links">
+        <a href="#">¿Olvidaste tu contraseña?</a><br>
+        <a href="#">Crear una cuenta nueva</a>
+    </div>
+</div>
+
+<div class="back">
+    <a href="index.html">⬅ Volver al inicio</a>
+</div>
+
+</body>
+</html>
