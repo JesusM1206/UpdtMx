@@ -6,111 +6,202 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
             font-family: Arial, sans-serif;
-            background: #0a0a0f;
-            color: #e5e7eb;
-        }header {
-        background: #1a1a2e;
-        color: #8ab4ff;
-        padding: 25px 20px;
-        text-align: center;
-        font-size: 32px;
+            background: #0a0a1a;
+            color: white;
+        }/* Barra superior */
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px;
+        background: linear-gradient(90deg, #4f00ff, #008cff);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .logo {
+        font-size: 1.4rem;
         font-weight: bold;
-        letter-spacing: 1px;
-        text-shadow: 0 0 10px #3b82f6;
     }
 
-    .hero {
-        background: radial-gradient(circle at top, #3b0ca3, #1a044d);
+    /* Menú hamburguesa */
+    .hamburger {
+        width: 30px;
+        cursor: pointer;
+    }
+    .hamburger div {
+        height: 4px;
+        background: white;
+        margin: 5px 0;
+        border-radius: 5px;
+        transition: 0.3s;
+    }
+
+    /* Menú desplegable */
+    #menu {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background: #120023cc;
+        backdrop-filter: blur(8px);
+        padding: 30px;
+        transition: 0.3s;
+    }
+    #menu a {
+        display: block;
         color: white;
-        padding: 70px 20px;
+        text-decoration: none;
+        padding: 12px 0;
+        font-size: 1.2rem;
+    }
+
+    #menu.open {
+        right: 0;
+    }
+
+    /* Buscador */
+    .search-container {
+        padding: 20px;
         text-align: center;
-        box-shadow: 0 0 25px #5b21b6 inset;
-    }
-    .hero h1 {
-        font-size: 42px;
-        margin-bottom: 10px;
-        text-shadow: 0 0 15px #8b5cf6;
-    }
-    .hero p {
-        font-size: 18px;
-        opacity: 0.95;
     }
 
-    .contenedor {
-        max-width: 900px;
-        margin: auto;
-        padding: 25px;
+    .search-container input {
+        width: 80%;
+        padding: 12px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        background: #1a1a2e;
+        color: white;
+        font-size: 1rem;
+        box-shadow: 0 0 10px #4f00ff;
     }
 
-    .producto {
-        background: #111827;
+    /* Productos */
+    .products {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .product {
+        background: #1a0030;
+        padding: 15px;
+        border-radius: 15px;
+        text-align: center;
+        box-shadow: 0 0 15px #4f00ff88;
+    }
+
+    .product h3 {
+        margin: 10px 0;
+    }
+
+    .product button {
+        padding: 10px 15px;
+        background: #4f00ff;
+        border: none;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* Login */
+    .login-container {
+        max-width: 350px;
+        margin: 50px auto;
+        background: #140028;
         padding: 25px;
         border-radius: 15px;
-        box-shadow: 0 0 15px rgba(139, 92, 246, 0.25);
-        margin-bottom: 25px;
-        transition: 0.25s ease;
-        border: 1px solid rgba(139, 92, 246, 0.2);
+        box-shadow: 0 0 20px #6800ff;
     }
-    .producto:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 25px rgba(96, 165, 250, 0.45);
-    }
-    .producto h2 {
-        margin: 0 0 12px;
-        font-size: 26px;
-        color: #93c5fd;
-        text-shadow: 0 0 8px #2563eb;
-    }
-    .producto p {
-        margin: 0 0 18px;
-        font-size: 18px;
-        color: #cbd5e1;
-    }
-
-    .btn {
-        display: inline-block;
-        background: #3b82f6;
-        color: white;
-        padding: 14px 22px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 17px;
-        text-shadow: 0 0 10px #1e3a8a;
-        box-shadow: 0 0 12px #3b82f6;
-    }
-    .btn:hover {
-        background: #2563eb;
-        box-shadow: 0 0 20px #60a5fa;
-    }
-
-    footer {
+    .login-container h2 {
         text-align: center;
-        padding: 30px;
-        margin-top: 40px;
-        background: #1a1a2e;
-        color: #93c5fd;
-        font-size: 14px;
-        box-shadow: 0 0 20px #3b82f6 inset;
     }
+    .login-container input {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 10px;
+        background: #1a1a2e;
+        color: white;
+        box-shadow: 0 0 8px #4f00ff;
+    }
+    .login-container button {
+        width: 100%;
+        padding: 12px;
+        background: #4f00ff;
+        border: none;
+        border-radius: 10px;
+        margin-top: 10px;
+        cursor: pointer;
+        color: white;
+    }
+
 </style>
 
 </head>
-<body><header>Updt Mx</header><section class="hero">
-    <h1>Productos de calidad al mejor precio</h1>
-    <p>Compra fácil, rápido y directo por WhatsApp</p>
-</section><div class="contenedor">
-    <div class="producto">
-        <h2>Producto de ejemplo</h2>
-        <p>$199 MXN</p>
-        <a class="btn" href="https://wa.me/5216183818899?text=Hola,%20quiero%20el%20producto%20de%20ejemplo">Comprar por WhatsApp</a>
-    </div><div class="producto">
-    <h2>Producto 2</h2>
-    <p>$299 MXN</p>
-    <a class="btn" href="https://wa.me/5216183818899?text=Hola,%20quiero%20el%20producto%202">Comprar por WhatsApp</a>
+<body>
+    <header>
+        <div class="logo">Updt Mx</div><div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</header>
+
+<!-- Menú -->
+<div id="menu">
+    <a href="index.html">Inicio</a>
+    <a href="#productos">Productos</a>
+    <a href="login.html">Iniciar sesión</a>
+    <a href="https://wa.me/5216183818899" target="_blank">WhatsApp</a>
 </div>
+
+<!-- Buscador -->
+<div class="search-container">
+    <input type="text" id="search" placeholder="Buscar productos..." onkeyup="buscar()" />
+</div>
+
+<!-- Productos -->
+<div class="products" id="productos">
+    <div class="product" data-name="Producto 1">
+        <h3>Producto 1</h3>
+        <button>Comprar</button>
+    </div>
+    <div class="product" data-name="Producto 2">
+        <h3>Producto 2</h3>
+        <button>Comprar</button>
+    </div>
+    <div class="product" data-name="Servicio Pro">
+        <h3>Servicio Pro</h3>
+        <button>Comprar</button>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("open");
+    }
+
+    function buscar() {
+        const filtro = document.getElementById("search").value.toLowerCase();
+        const productos = document.querySelectorAll(".product");
+
+        productos.forEach(p => {
+            const nombre = p.getAttribute("data-name").toLowerCase();
+            p.style.display = nombre.includes(filtro) ? "block" : "none";
+        });
+    }
+</script>
+
+</body>
+</html>
 
 </div><footer>
     © 2025 Updt Mx — Todos los derechos reservados.
