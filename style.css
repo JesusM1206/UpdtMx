@@ -1,0 +1,11 @@
+.neon-text {
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow:
+        0 0 5px #6a00ff,
+        0 0 10px #6a00ff,
+        0 0 20px #6a00ff,
+        0 0 40px #4f00ff,
+        0 0 80px #4f00ff;
+    letter-spacing: 1px;
+}
