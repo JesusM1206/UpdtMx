@@ -1,188 +1,109 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Updt Mx</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanPick</title>
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: #0a0a1a;
+            background-color: #0a0a0a;
             color: white;
-        }
+        }/* Header */
+    .header-logo {
+        text-align: center;
+        padding: 25px 0 10px 0;
+    }
+    .header-logo img {
+        width: 150px;
+    }
+    .header-logo h1 {
+        margin-top: 10px;
+        color: white;
+        font-size: 28px;
+        letter-spacing: 1px;
+    }
 
-        /* Barra superior */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 20px;
-            background: linear-gradient(90deg, #4f00ff, #008cff);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+    /* Menú hamburguesa */
+    .menu-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 30px;
+        cursor: pointer;
+    }
 
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+    .menu-panel {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #111;
+        padding: 30px;
+        box-shadow: -3px 0 10px rgba(0,0,0,0.5);
+        transition: 0.3s;
+    }
 
-        .logo-container img {
-            width: 40px;
-            height: 40px;
-        }
+    .menu-panel.open {
+        right: 0;
+    }
 
-        .logo-container h1 {
-            font-size: 1.4rem;
-            font-weight: bold;
-            margin: 0;
-            color: white;
-        }
+    .menu-panel a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        margin: 15px 0;
+        font-size: 18px;
+    }
 
-        /* Menú hamburguesa */
-        .hamburger {
-            width: 30px;
-            cursor: pointer;
-        }
-        .hamburger div {
-            height: 4px;
-            background: white;
-            margin: 5px 0;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
+    /* Buscador */
+    .search-box {
+        width: 90%;
+        margin: 20px auto;
+        text-align: center;
+    }
 
-        /* Menú desplegable */
-        #menu {
-            position: fixed;
-            top: 0;
-            right: -250px;
-            width: 250px;
-            height: 100%;
-            background: #120023cc;
-            backdrop-filter: blur(8px);
-            padding: 30px;
-            transition: 0.3s;
-        }
-        #menu a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            padding: 12px 0;
-            font-size: 1.2rem;
-        }
+    .search-box input {
+        width: 90%;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        font-size: 16px;
+    }
 
-        #menu.open {
-            right: 0;
-        }
+</style>
 
-        /* Buscador */
-        .search-container {
-            padding: 20px;
-            text-align: center;
-        }
-
-        .search-container input {
-            width: 80%;
-            padding: 12px;
-            border-radius: 10px;
-            border: none;
-            outline: none;
-            background: #1a1a2e;
-            color: white;
-            font-size: 1rem;
-            box-shadow: 0 0 10px #4f00ff;
-        }
-
-        /* Productos */
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .product {
-            background: #1a0030;
-            padding: 15px;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 0 15px #4f00ff88;
-        }
-
-        .product h3 {
-            margin: 10px 0;
-        }
-
-        .product button {
-            padding: 10px 15px;
-            background: #4f00ff;
-            border: none;
-            border-radius: 10px;
-            color: white;
-            cursor: pointer;
-        }
-    </style>
 </head>
-<body>
-    <header>
-        <div class="logo-container">
-            <img src="logo.png" alt="UrbanPick Logo" />
-            <h1>UrbanPick</h1>
-        </div>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </header>
+<body><!-- Botón menú -->
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
-    <!-- Menú -->
-    <div id="menu">
-        <a href="index.html">Inicio</a>
-        <a href="#productos">Productos</a>
-        <a href="login.html">Iniciar sesión</a>
-        <a href="https://wa.me/5216183818899" target="_blank">WhatsApp</a>
-    </div>
+<!-- Logo y título -->
+<div class="header-logo">
+    <img src="logo.jpeg.jpeg" alt="UrbanPick Logo">
+    <h1>UrbanPick</h1>
+</div>
 
-    <!-- Buscador -->
-    <div class="search-container">
-        <input type="text" id="search" placeholder="Buscar productos..." onkeyup="buscar()" />
-    </div>
+<!-- Buscador -->
+<div class="search-box">
+    <input type="text" placeholder="Buscar productos...">
+</div>
 
-    <!-- Productos -->
-    <div class="products" id="productos">
-        <div class="product" data-name="Producto 1">
-            <h3>Producto 1</h3>
-            <button>Comprar</button>
-        </div>
-        <div class="product" data-name="Producto 2">
-            <h3>Producto 2</h3>
-            <button>Comprar</button>
-        </div>
-        <div class="product" data-name="Servicio Pro">
-            <h3>Servicio Pro</h3>
-            <button>Comprar</button>
-        </div>
-    </div>
+<!-- Menú lateral -->
+<div id="menuPanel" class="menu-panel">
+    <a href="#">Inicio</a>
+    <a href="#">Ropa</a>
+    <a href="#">Perfumes</a>
+    <a href="#">Accesorios</a>
+    <a href="login.html">Iniciar sesión</a>
+</div>
 
-    <script>
-        function toggleMenu() {
-            document.getElementById("menu").classList.toggle("open");
-        }
+<script>
+    function toggleMenu() {
+        document.getElementById("menuPanel").classList.toggle("open");
+    }
+</script>
 
-        function buscar() {
-            const filtro = document.getElementById("search").value.toLowerCase();
-            const productos = document.querySelectorAll(".product");
-
-            productos.forEach(p => {
-                const nombre = p.getAttribute("data-name").toLowerCase();
-                p.style.display = nombre.includes(filtro) ? "block" : "none";
-            });
-        }
-    </script>
 </body>
 </html>
