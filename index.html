@@ -12,7 +12,20 @@
             color: white;
         }
 
-        /* Barra superior con logo */
+        /* Estilo neón para el título */
+        .neon-text {
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow:
+                0 0 5px #6a00ff,
+                0 0 10px #6a00ff,
+                0 0 20px #6a00ff,
+                0 0 40px #4f00ff,
+                0 0 80px #4f00ff;
+            letter-spacing: 1px;
+        }
+
+        /* Barra superior */
         header {
             display: flex;
             justify-content: space-between;
@@ -27,22 +40,17 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
 
         .logo-container img {
-            width: 50px;
-            height: 50px;
-            border-radius: 10px;
-            object-fit: cover;
+            width: 40px;
+            height: 40px;
         }
 
         .logo-container h1 {
-            font-size: 1.5rem;
-            font-weight: bold;
+            font-size: 1.4rem;
             margin: 0;
-            color: white;
-            letter-spacing: 1px;
         }
 
         /* Menú hamburguesa */
@@ -58,18 +66,17 @@
             transition: 0.3s;
         }
 
-        /* Menú lateral */
+        /* Menú desplegable */
         #menu {
             position: fixed;
             top: 0;
             right: -250px;
             width: 250px;
             height: 100%;
-            background: #150028e0;
-            backdrop-filter: blur(10px);
+            background: #120023cc;
+            backdrop-filter: blur(8px);
             padding: 30px;
             transition: 0.3s;
-            box-shadow: -2px 0 15px #4f00ff;
         }
         #menu a {
             display: block;
@@ -90,7 +97,7 @@
         }
 
         .search-container input {
-            width: 85%;
+            width: 80%;
             padding: 12px;
             border-radius: 10px;
             border: none;
@@ -98,7 +105,7 @@
             background: #1a1a2e;
             color: white;
             font-size: 1rem;
-            box-shadow: 0 0 12px #4f00ff99;
+            box-shadow: 0 0 10px #4f00ff;
         }
 
         /* Productos */
@@ -114,7 +121,7 @@
             padding: 15px;
             border-radius: 15px;
             text-align: center;
-            box-shadow: 0 0 15px #4f00ff77;
+            box-shadow: 0 0 15px #4f00ff88;
         }
 
         .product h3 {
@@ -128,25 +135,15 @@
             border-radius: 10px;
             color: white;
             cursor: pointer;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
-
-        .product button:hover {
-            background: #6a27ff;
         }
     </style>
 </head>
 <body>
-
-    <!-- Header con logo jpeg -->
     <header>
         <div class="logo-container">
-            <img src="logo.jpeg.jpeg" alt="UrbanPick Logo" />
-            <h1>UrbanPick</h1>
+            <img src="logo.png" alt="UrbanPick Logo" />
+            <h1 class="neon-text">UrbanPick</h1>
         </div>
-
-        <!-- Menú hamburguesa -->
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
             <div></div>
@@ -154,7 +151,7 @@
         </div>
     </header>
 
-    <!-- Menú lateral -->
+    <!-- Menú -->
     <div id="menu">
         <a href="index.html">Inicio</a>
         <a href="#productos">Productos</a>
@@ -173,12 +170,10 @@
             <h3>Producto 1</h3>
             <button>Comprar</button>
         </div>
-
         <div class="product" data-name="Producto 2">
             <h3>Producto 2</h3>
             <button>Comprar</button>
         </div>
-
         <div class="product" data-name="Servicio Pro">
             <h3>Servicio Pro</h3>
             <button>Comprar</button>
@@ -200,6 +195,5 @@
             });
         }
     </script>
-
 </body>
 </html>
